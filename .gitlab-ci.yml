@@ -13,7 +13,7 @@ build:
     - mkdir public
     - mv assets public/
     - echo -e $(minify index.html) > public/index.html
-    - echo -e $(minify style.css) > public/index.html
+    - echo -e $(minify style.css) > public/style.css
   artifacts:
     paths:
       - public
