@@ -1,4 +1,22 @@
-image: busybox
+image: node:slim@sha256:d48e6c45deedbba531d41a778fa356344f37b8348f461d3c5c8a124e9444bd23
+
+stages:
+  - build
+  - deploy
+
+before_script:
+  - npm i minify -g
+
+build:
+  stage: build
+  script:
+    - mkdir public
+    - mv assets public/
+    - echo -e $(minify index.html) > public/index.html
+    - echo -e $(minify style.css) > public/index.html
+  artifacts:
+    paths:
+      - public
 
 pages:
   stage: deploy
