@@ -12,7 +12,7 @@ The Landing-page is a page that aims to group all the links of contacts (and oth
 
 ## Preview
 
-// TO DO
+![Preview landing page](./docs/images/preview_landing-page.png)
 
 ## License
 
