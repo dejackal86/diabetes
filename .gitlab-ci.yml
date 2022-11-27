@@ -12,11 +12,15 @@ build:
   script:
     - mkdir public
     - mv assets public/
+    - mv favicon.svg public/
     - echo -e $(minify index.html) > public/index.html
     - echo -e $(minify style.css) > public/style.css
   artifacts:
     paths:
       - public
+    name: artifacts:build
+    when: on_success
+    expire_in: "1 weeks"
 
 pages:
   stage: deploy
